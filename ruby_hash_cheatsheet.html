@@ -69,13 +69,19 @@ h.each_value { |value| puts value }</code></pre></td>
         <th>Example</th>
       </tr>
       <tr>
-        <td><code>Array#zip</code> and <code>Array.to_h</code></td>
+        <td><code><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-zip">Array#zip</a></code> and <code><a href="http://ruby-doc.org/core-2.1.0/Array.html#method-i-to_h">Array.to_h</code></td>
         <td>Merge two arrays into a single two-dimensional array; then turn that into a hash</td>
         <td><pre><code>alphs = [‘a’,’b’,’c’,’d’,’e’]
 nums_four = [5,6,7,8]
 nums_six = [5,6,7,8,9,10]
 alphs.zip(nums_four) # => {"a"=>5, "b"=>6, "c"=>7, "d"=>8, "e"=>nil}
 alphs.zip(nums_six) # => {"a"=>5, "b"=>6, "c"=>7, "d"=>8, "e"=>9}</pre></code></td>
+      </tr>
+      <tr>
+        <td><a href="http://ruby-doc.org/core-2.2.2/Hash.html#method-c-5B-5D">Hash constructor</a></td>
+        <td>Create a hash from a single array</td>
+        <td><pre><code>Hash['key1', 'value1', 'key2', 'value2']
+# => {"key1"=>"value1", "key2"=>"value2"}</pre></code></td>
       </tr>
     </table>
 
