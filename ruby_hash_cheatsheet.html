@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Ruby Hash Cheatsheet</title>
-	</head>
-	<body>
-		<table>
-			<tr>
-				<th></th>
-				<th></th>
-				<th></th>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-	</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ruby Hash Cheatsheet</title>
+
+    <link rel="stylesheet" type="text/css" href="hash_cheatsheet_stylesheet.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Roboto' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <h1>Ruby Hash Tricks</h1>
+    <p>
+      In Ruby, a hash is a dictionary-like collection of unique keys and their values.  They're also called 'associative arrays'.  Where an array uses integers from 0 on as its index, a hash allows the keys to be any object type.
+    </p>
+    <p>
+      Hashes can sometimes seem confusing or complex, especially for beginners.  There's a <a>long list</a> of hash-specific methods in the Ruby Docs, but we want to present a curated shortlist of helpful methods and tricks that beginners might not know about.
+    </p>
+    
+    <table>
+      <tr>
+        <th>Method</th>
+        <th>Use</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td><a href="http://ruby-doc.org/core-2.2.2/Hash.html#method-i-each_pair"><code>each_pair</code></a></td>
+        <td>iterates over all key-value pairs in a hash</td>
+        <td><pre><code>h = { "a" => 50, "b" => 100 }
+h.each { |key, value| puts "#{key} is #{value}" }</code></pre></td>
+      </tr>
+      <tr>
+        <td><code><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-each_key">each_key</a></code></td>
+        <td>iterates over all keys in a hash</td>
+        <td><pre><code>h = { "a" => 50, "b" => 100 }
+h.each_key { |key| puts key }</code></pre></td>
+      </tr>
+      <tr>
+        <td><code>each_value</code></td>
+        <td>iterates over all values in a hash</td>
+        <td><pre><code>h = { "a" => 50, "b" => 100 }
+h.each_value { |value| puts value }</code></pre></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
 </html>
