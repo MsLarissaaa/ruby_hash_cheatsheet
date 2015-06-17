@@ -69,7 +69,7 @@ h.each_value { |value| puts value }</code></pre></td>
         <th>Example</th>
       </tr>
       <tr>
-        <td><code><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-zip">Array#zip</a></code> and <code><a href="http://ruby-doc.org/core-2.1.0/Array.html#method-i-to_h">Array.to_h</code></td>
+        <td><code><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-zip">Array#zip</a></code> and <code><a href="http://ruby-doc.org/core-2.1.0/Array.html#method-i-to_h">Array.to_h</a></code></td>
         <td>Merge two arrays into a single two-dimensional array; then turn that into a hash</td>
         <td><pre><code>alphs = [‘a’,’b’,’c’,’d’,’e’]
 nums_four = [5,6,7,8]
@@ -84,6 +84,13 @@ alphs.zip(nums_six) # => {"a"=>5, "b"=>6, "c"=>7, "d"=>8, "e"=>9}</pre></code></
 # => {"key1"=>"value1", "key2"=>"value2"}</pre></code></td>
       </tr>
     </table>
+
+    <div class="text_wrapper">
+      <h3>Adding and removing keys or values</h3>
+      <p>
+        One of the first things we learn about hashes is that adding a new key-value pair is as easy as <code>hash[new_key] = new_value</code>.  But novices don't always learn about some other nifty ways to add and remove things from hashes.
+      </p>
+    </div>
 
   </body>
 </html>
