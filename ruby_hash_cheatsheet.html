@@ -16,7 +16,7 @@
     <p>
       Hashes can sometimes seem confusing or complex, especially for beginners.  There's a <a>long list</a> of hash-specific methods in the Ruby Docs, but we want to present a curated shortlist of helpful methods and tricks that beginners might not know about.
     </p>
-    
+
     <table>
       <tr>
         <th>Method</th>
@@ -27,24 +27,71 @@
         <td><a href="http://ruby-doc.org/core-2.2.2/Hash.html#method-i-each_pair"><code>each_pair</code></a></td>
         <td>iterates over all key-value pairs in a hash</td>
         <td><pre><code>h = { "a" => 50, "b" => 100 }
-h.each { |key, value| puts "#{key} is #{value}" }</code></pre></td>
+h.each { |key, value| puts "#{key} is #{value}" }
+(returns) #=> a is 50
+              b is 100</code></pre></td>
       </tr>
       <tr>
         <td><code><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-each_key">each_key</a></code></td>
         <td>iterates over all keys in a hash</td>
         <td><pre><code>h = { "a" => 50, "b" => 100 }
-h.each_key { |key| puts key }</code></pre></td>
+h.each_key { |key| puts key }
+  #=> a
+      b</code></pre></td>
       </tr>
       <tr>
-        <td><code>each_value</code></td>
+        <td><code><a href="http://ruby-doc.org/core-2.1.0/Hash.html#method-i-each_value">each_value</a></code></td>
         <td>iterates over all values in a hash</td>
         <td><pre><code>h = { "a" => 50, "b" => 100 }
-h.each_value { |value| puts value }</code></pre></td>
+h.each_value { |value| puts value }
+  #=> 50
+      100</code></pre></td>
       </tr>
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><code><a href="http://ruby-doc.org/core-2.1.0/Hash.html#method-i-has_key-3F">has_key?</a></code></td>
+        <td>returns <code>true</code> if the given key is present in a hash</td>
+        <td><pre><code>h = { "a" => 50, "b" => 100 }
+h.has_key?("a") #=> true
+h.has_key?("z") #=> false</code></pre></td>
+      </tr>
+      <tr>
+        <td><code><a href="http://ruby-doc.org/core-2.1.0/Hash.html#method-i-has_value-3F">has_value?</a></code></td>
+        <td>returns <code>true</code> if the given value is present for some key in a hash</td>
+        <td><pre><code>h = { "a" => 50, "b" => 100 }
+h.has_value?(50) #=> true
+h.has_value?(99) #=> false</code></pre></td>
+      </tr>
+       <tr>
+        <td><code><a href="http://ruby-doc.org/core-2.1.0/Hash.html#method-i-include-3F">include?(key)</a></code></td>
+        <td>related to <code>has_key?</code>; returns <code>true</code> if the given key is present in the hash</td>
+        <td><pre><code>h = { "a" => 65, "b" => 102 }
+h.has_key?("a") #=> true
+h.has_key?("q") #=> false</code></pre></td>
+      </tr>
+      <tr>
+        <td><code><a href="http://ruby-doc.org/core-2.1.0/Hash.html#method-i-delete_if">delete_if</a></code></td>
+        <td>deletes every key-value pair from the hash for which the given block evaluates to <code>true</code></td>
+        <td><pre><code>h = { "a" => 50, "b" => 100, "c" => 150 }
+h.delete_if { |key, value| key >= "b" } #=> { "a" => 50 }</code></pre></td>
+      </tr>
+      <tr>
+        <td><code><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-map">map</a></code></td>
+        <td>an array method that can be applied to hashes in some cases; invokes the given block once for each element of self, and creates a new array containing the values returned by the block</td>
+        <td><pre><code>h = { "a"=>100, "b"=>75, "c"=>50 }
+h.map {|key,value| key + "!!!"} #=> ["a!!!", "b!!!", "c!!!"]</code></pre></td>
+      </tr>
+      <tr>
+        <td><code><a href="http://ruby-doc.org/core-2.1.0/Hash.html#method-i-flatten">flatten</a></code></td>
+        <td>returns a new array that is a one-dimensional flattening of the given hash; unlike Array#flatten, this method includes the optional 'level' argument that determines the level of recursion to flatten</td>
+        <td><pre><code>h = {1=> "one", 2 => [2,"two"], 3 => "three"}
+h.flatten #=> [1, "one", 2, [2, "two"], 3, "three"]
+h.flatten(2) #=> [1, "one", 2, 2, "two", 3, "three"]</code></pre></td>
+      </tr>
+      <tr>
+        <td><code><a href="http://ruby-doc.org/core-2.1.0/Hash.html#method-i-invert">invert</a></code></td>
+        <td>returns a new hash created by using the original hash's values as keys, and the keys as values</td>
+        <td><pre><code>h = { "n" => 100, "m" => 100, "y" => 300, "d" => 200, "a" => 0 }
+h.invert #=> {0=>"a", 100=>"m", 200=>"d", 300=>"y"}</code></pre></td>
       </tr>
     </table>
   </body>
