@@ -40,6 +40,9 @@ table, th, td {
   padding-right: 1em;
 	background-color: white;
 }
+table {
+	max-width: 1000px;
+}
 td {
 	width: 30%;
 }
