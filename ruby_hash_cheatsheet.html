@@ -92,5 +92,32 @@ alphs.zip(nums_six) # => {"a"=>5, "b"=>6, "c"=>7, "d"=>8, "e"=>9}</pre></code></
       </p>
     </div>
 
+    <table>
+      <tr>
+        <th>Method or Trick</th>
+        <th>Use</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td>Set default value for hash</td>
+        <td><a href="http://www.google.com/url?q=http%3A%2F%2Fstackoverflow.com%2Fa%2F1061835%2F3984943&sa=D&sntz=1&usg=AFQjCNHVojIMGB4wSO8f9vEh_Z8rqhWZ6A">Create hash with empty array as default value so new keys (and key-value pairs) can be easily pushed in </a></td>
+        <td><pre><code>parties = Hash.new {|hash, key| hash[key] = [] }
+parties["Summer party"] # => []
+parties # => {"Summer party" => []}
+parties["Summer party"] << "Joe"
+parties # => {"Summer party" => ["Joe"]}
+parties["Other party"] << "Jane"
+parties # => {"Summer party"=>["Joe"], "Other party"=>["Jane"]}</pre></code></td>
+      </tr>
+      <tr>
+        <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-shift">shift</a></td>
+        <td>Remove the first key-value pair from the hash</td>
+        <td><pre><code>hsh = {"key1"=>"value1", "key2"=>"value2", "key3"=>"value3"}
+hsh.shift # => ["key1", "value1"]
+hsh # => {"key2"=>"value2", "key3"=>"value3"}
+        </pre></code></td>
+      </tr>
+    </table>
+
   </body>
 </html>
