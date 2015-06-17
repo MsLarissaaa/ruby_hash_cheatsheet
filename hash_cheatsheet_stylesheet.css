@@ -13,11 +13,15 @@ div.text_wrapper {
 div.text_wrapper:first-of-type {
 	margin-top: 50px;
 }
-h1, h3, p {
+h1, h3, h5, p {
 	/*color: white;*/
 	font-family: "Open Sans", "Georgia", sans-serif;
 }
 h1, h3 {
+	text-align: center;
+}
+h5 {
+	margin-top: 0;
 	text-align: center;
 }
 p {
