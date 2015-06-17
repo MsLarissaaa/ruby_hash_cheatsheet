@@ -23,7 +23,7 @@
 
       <h3>Iterating over hashes</h3>
       <p>
-        Iterating over hashes is most easily accomplished with these methods:
+        Iterating over hashes is most easily accomplished with the following methods.
       </p>
     </div>
 
@@ -46,7 +46,7 @@ h.each { |key, value| puts "#{key} is #{value}" }</code></pre></td>
 h.each_key { |key| puts key }</code></pre></td>
       </tr>
       <tr>
-        <td><code>each_value</code></td>
+        <td><code><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-each_value">each_value</a></code></td>
         <td>iterates over all values in a hash</td>
         <td><pre><code>h = { "a" => 50, "b" => 100 }
 h.each_value { |value| puts value }</code></pre></td>
@@ -56,9 +56,9 @@ h.each_value { |value| puts value }</code></pre></td>
     </table>
 
     <div class="text_wrapper">
-      <h3>Heading</h3>
+      <h3>Quickly creating hashes</h3>
       <p>
-        here's some text
+        Here are some methods to quickly create hashes.
       </p>
     </div>
 
@@ -70,8 +70,12 @@ h.each_value { |value| puts value }</code></pre></td>
       </tr>
       <tr>
         <td><code>Array#zip</code> and <code>Array.to_h</code></td>
-        <td></td>
-        <td></td>
+        <td>Merge two arrays into a single two-dimensional array; then turn that into a hash</td>
+        <td><pre><code>alphs = [‘a’,’b’,’c’,’d’,’e’]
+nums_four = [5,6,7,8]
+nums_six = [5,6,7,8,9,10]
+alphs.zip(nums_four) # => {"a"=>5, "b"=>6, "c"=>7, "d"=>8, "e"=>nil}
+alphs.zip(nums_six) # => {"a"=>5, "b"=>6, "c"=>7, "d"=>8, "e"=>9}</pre></code></td>
       </tr>
     </table>
 

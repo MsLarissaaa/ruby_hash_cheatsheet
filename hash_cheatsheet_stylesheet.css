@@ -40,9 +40,15 @@ table, th, td {
   padding-right: 1em;
 	background-color: white;
 }
+td {
+	width: 30%;
+}
 code {
   /*background-color: #D3D3D3;*/
   background-color: rgb(240,240,240);
+}
+pre code {
+	white-space: pre-wrap;
 }
 a {
 	text-decoration: none;
